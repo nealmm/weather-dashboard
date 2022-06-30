@@ -5,6 +5,7 @@ var searchInput = document.getElementById('search-input')
 
 var cityName = document.getElementById('city-name')
 var currentDate = document.getElementById('current-date')
+var currentIcon = document.getElementById('current-icon')
 var currentTemp = document.getElementById('current-temp')
 var currentWind = document.getElementById('current-wind')
 var currentHum = document.getElementById('current-hum')
@@ -30,6 +31,7 @@ searchForm.addEventListener('submit', event => {
         .then(data => {
           cityName.textContent = city
           currentDate.textContent = moment().format('l')
+          currentIcon.src = 'https://openweathermap.org/img/wn/' + data.current.weather[0].icon + '.png'
           currentTemp.textContent = data.current.temp + '°F'
           currentWind.textContent = data.current.wind_speed + ' mph wind speed'
           currentHum.textContent = data.current.humidity + '% humidity'
@@ -39,16 +41,19 @@ searchForm.addEventListener('submit', event => {
             var forecastCard = document.createElement('li')
 
             var date = document.createElement('p')
+            var icon = document.createElement('img')
             var temp = document.createElement('p')
             var wind = document.createElement('p')
             var humidity = document.createElement('p')
 
             date.textContent = moment().add(i + 1, 'days').format('l')
+            icon.src = 'https://openweathermap.org/img/wn/' + data.daily[i].weather[0].icon + '.png'
             temp.textContent = data.daily[i].temp.max + '°F'
             wind.textContent = data.daily[i].wind_speed + ' mph wind speed'
             humidity.textContent = data.daily[i].humidity + '% humidity'
 
             forecastCard.appendChild(date)
+            forecastCard.appendChild(icon)
             forecastCard.appendChild(temp)
             forecastCard.appendChild(wind)
             forecastCard.appendChild(humidity)

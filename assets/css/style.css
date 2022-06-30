@@ -1,0 +1,13 @@
+header {
+    text-align: center;
+}
+
+main {
+    display: flex;
+}
+
+#daily-forecast {
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
