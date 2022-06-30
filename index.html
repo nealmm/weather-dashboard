@@ -5,16 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <h1>Weather Dashboard</h1>
-    <form>
-        <label for="city-name">Search for a city</label>
-        <input type="text" id="city-name">
-        <input type="submit" value="Search">
-    </form>
-    <ul>
-        <li></li>
-    </ul>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <main>
+        <section>
+            <form id="search-form">
+                <label for="search-input">Search for a city</label>
+                <input type="text" id="search-input">
+                <input type="submit" value="Search">
+            </form>
+            <ul>
+            </ul>
+        </section>
+        <section>
+            <h2 id="city-name"></h2>
+            <p id="current-date"></p>
+            <p id="current-temp"></p>
+            <p id="current-wind"></p>
+            <p id="current-hum"></p>
+            <p id="current-uv"></p>
+            <ul id="daily-forecast">
+            </ul>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
