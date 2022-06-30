@@ -22,7 +22,7 @@ searchForm.addEventListener('submit', event => {
 
   var cityName = searchInput.value.trim()
 
-  fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=1&appid=' + apiKey)
+  fetch('https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=1&appid=' + apiKey)
     .then(response => response.json())
     .then(geoData => {
       var lat = geoData[0].lat
