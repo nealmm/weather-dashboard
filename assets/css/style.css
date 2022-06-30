@@ -6,12 +6,12 @@ main {
     display: flex;
 }
 
-#current-uv {
+#current-uvi {
     display: inline-block;
     color: white;
 }
 
-#daily-forecast {
+#forecast-list {
     display: flex;
     padding: 0;
     list-style: none;
