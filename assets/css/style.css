@@ -6,6 +6,11 @@ main {
     display: flex;
 }
 
+#current-uv {
+    display: inline-block;
+    color: white;
+}
+
 #daily-forecast {
     display: flex;
     padding: 0;

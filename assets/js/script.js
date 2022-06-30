@@ -37,6 +37,22 @@ searchForm.addEventListener('submit', event => {
           currentHum.textContent = data.current.humidity + '% humidity'
           currentUV.textContent = data.current.uvi + ' UV index'
 
+          if (data.current.uvi < 3) {
+            currentUV.style.backgroundColor = 'green'
+          }
+          else if (data.current.uvi < 6) {
+            currentUV.style.backgroundColor = 'yellow'
+          }
+          else if (data.current.uvi < 8) {
+            currentUV.style.backgroundColor = 'orange'
+          }
+          else if (data.current.uvi < 11) {
+            currentUV.style.backgroundColor = 'red'
+          }
+          else {
+            currentUV.style.backgroundColor = 'purple'
+          }
+
           for (var i = 0; i < 5; i++) {
             var forecastCard = document.createElement('li')
 
